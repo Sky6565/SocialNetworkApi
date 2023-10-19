@@ -12,7 +12,7 @@ app.use(express.static("public"));
 // otherwise short-circuit to local MongoDB server's DB
 // MongoDB finds and connects to DB if exists or creates if it doesn't
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/SocialNetworkApi",
+  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/social-network-api",
   {
     useFindAndModify: false,
     useNewUrlParser: true,
