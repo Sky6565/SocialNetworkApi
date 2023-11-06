@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const db = require("./config/connection");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -12,7 +13,7 @@ app.use(express.static("public"));
 // otherwise short-circuit to local MongoDB server's DB
 // MongoDB finds and connects to DB if exists or creates if it doesn't
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/social-network-api",
+  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/SocialNetworkApi",
   {
     useFindAndModify: false,
     useNewUrlParser: true,
